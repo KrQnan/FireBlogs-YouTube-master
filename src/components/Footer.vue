@@ -21,10 +21,10 @@
               </div>
               <div class="col-2">
                   <ul>
-                      <router-link class="link" :to="{ name:'home'}">Home</router-link>
-                      <router-link class="link" :to="{ name:'blogs'}">Blogs</router-link>
-                      <router-link v-if="user" class="link" :to="{ name:'newpost'}">Create post</router-link>
-                      <router-link v-if="!user" class="link" :to="{ name:'login'}">Login</router-link>
+                      <router-link class="link" :to="{ name:'Home'}">Home</router-link>
+                      <router-link class="link" :to="{ name:'Blogs'}">Blogs</router-link>
+                      <router-link class="link" :to="{ name:'newpost'}">Create post</router-link>
+                      <router-link v-if="!user" class="link" :to="{ name:'Login'}">Login</router-link>
                   </ul>
               </div>
           </div>
@@ -47,6 +47,12 @@ export default {
         twitter,
         instagram,
         linkedin,
+    },
+
+    computed: {
+        user() {
+            return this.$store.state.user;
+        },
     },
 };
 </script>
